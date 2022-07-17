@@ -43,6 +43,7 @@ export class AuthController {
     })(req, res, next);
   }
 
+  @UseGuards(NotionAuthGuard)
   @Get('logout')
   logout(@Req() req: any, @Res() res: Response, @Next() next: NextFunction) {
     return req.logout(function (err: any) {

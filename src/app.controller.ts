@@ -8,7 +8,7 @@ export class AppController {
 
   @Get()
   getHello(@Req() req: any, @Res() res: Response) {
-    if (req.session && req.session.passport && req.session.passport.user) {
+    if (req.session?.passport?.user) {
       res.send(
         JSON.stringify(req.session.passport.user) +
           '<br/><br/><a href="/auth/logout">Logout</a></html>',
