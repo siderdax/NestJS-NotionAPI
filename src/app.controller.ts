@@ -10,8 +10,11 @@ export class AppController {
   getHello(@Req() req: any, @Res() res: Response) {
     if (req.session?.passport?.user) {
       res.send(
-        JSON.stringify(req.session.passport.user) +
-          '<br/><br/><a href="/auth/logout">Logout</a></html>',
+        `<html><head><title>Notion Auth Sample</title></head><pre>${JSON.stringify(
+          req.session.passport.user,
+          null,
+          '\t',
+        )}</pre>` + '<br/><br/><a href="/auth/logout">Logout</a></html>',
       );
     } else {
       res.send(
