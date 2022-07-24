@@ -39,7 +39,7 @@ export class NotionStrategy extends PassportStrategy(OAuth2Strategy, 'notion') {
     refreshToken: any,
     params: any,
     profile: any,
-    done: any,
+    verified: any,
   ) {
     return params;
   }
